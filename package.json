@@ -2,7 +2,7 @@
   "name": "codereviewer",
   "displayName": "CodeReviewer",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.79.0"
   },
@@ -20,6 +20,14 @@
         "title": "Start review code"
       }
     ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "code-review.start",
+          "group": "navigation"
+        }
+      ]
+    },
     "configuration": {
       "title": "CodeReview",
       "properties": {
