@@ -64,23 +64,14 @@ export class CodeReviewer {
 
         const tempFilePath = path.join(tempDirectory, tempFilename);
 
-        fs.mkdir(tempDirectory, { recursive: true }, (err) => {
-            if (err) {
-                vscode.window.showWarningMessage('Erro ao criar o diretório temporário');
-                console.error('Erro ao criar o diretório temporário:', err);
-                return;
-            }
-
-            fs.writeFile(tempFilePath, response, (err) => {
-                if (err) {
-                    vscode.window.showWarningMessage('Erro ao gravar o arquivo temporário');
-                    console.error('Erro ao gravar o arquivo temporário:', err);
-                    return;
-                }
-
-                const uri = vscode.Uri.file(tempFilePath);
-                vscode.window.showTextDocument(uri);
-            });
-        });
+        try {
+            await fs.promises.mkdir(tempDirectory, { recursive: true });
+            await fs.promises.writeFile(tempFilePath, response);
+            const uri = vscode.Uri.file(tempFilePath);
+            await vscode.window.showTextDocument(uri);
+        } catch (err) {
+            vscode.window.showWarningMessage('Ocorreu um erro ao criar ou gravar o arquivo temporário.');
+            console.error('Erro ao criar ou gravar o arquivo temporário:', err);
+        }
     }
 }
