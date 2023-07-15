@@ -10,6 +10,8 @@ A extensão CodeReviewer é uma ferramenta que permite revisar código utilizand
 
 ## Como usar
 
+**Não esqueça de configurar a chave apiKey em 'Extension Settings'**
+
 ### Opção 1: Comando
 
 1. Selecione o código que deseja revisar no editor do Visual Studio Code.
@@ -28,7 +30,7 @@ A extensão CodeReviewer é uma ferramenta que permite revisar código utilizand
 5. Após a conclusão, um arquivo Markdown com o feedback da revisão será aberto em uma visualização separada.
 6. Você pode salvar o arquivo Markdown e compartilhá-lo conforme necessário.
 
-[Exemplo de utilização](https://raw.githubusercontent.com/GanekoGuilherme/codereviewer/feat/window-progress/exemplo-utilizacao.jpg)
+![Exemplo de utilização](./exemplo-utilizacao.jpg)
 
 ## Configurações
 
@@ -45,15 +47,3 @@ A extensão CodeReviewer é uma ferramenta que permite revisar código utilizand
 ## Licença
 
 MIT License
-
-## Release Notes
-
-### 1.0.0 - 15/07/2023
-
-A versão 1.0.0 do CodeReviewer traz os recursos iniciais e funcionalidades básicas para revisão de código utilizando o modelo de linguagem GPT-3.5 Turbo da OpenAI.
-
-### Novidades
-- Solicita revisões de código com base nos princípios de programação SOLID e clean code.
-- Gera arquivos Markdown com feedbacks detalhados das revisões.
-- Permite visualizar os arquivos Markdown gerados em uma visualização separada.
-- Suporte para acesso via comando ou menu de contexto.

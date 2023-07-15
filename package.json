@@ -1,8 +1,10 @@
 {
-  "name": "codereviewer",
-  "displayName": "CodeReviewer",
+  "name": "code-reviewer",
+  "displayName": "Code Reviewer",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
+  "publisher": "guilhermeganeko",
+  "icon": "logo.png",
   "engines": {
     "vscode": "^1.79.0"
   },
@@ -11,7 +13,7 @@
     "url": "https://github.com/GanekoGuilherme/codereviewer"
   },
   "categories": [
-    "Other"
+    "GPT",  "code", "reviewer"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
