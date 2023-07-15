@@ -13,7 +13,7 @@
     "url": "https://github.com/GanekoGuilherme/codereviewer"
   },
   "categories": [
-    "GPT",  "code", "reviewer"
+    "Other"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
