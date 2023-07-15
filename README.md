@@ -1,20 +1,59 @@
-# codereviewer README
+# CodeReviewer
 
-## Features
+A extensão CodeReviewer é uma ferramenta que permite revisar código utilizando o poder do modelo de linguagem GPT-3.5 Turbo da OpenAI. Com esta extensão, você pode obter análises e feedbacks detalhados sobre o código selecionado.
 
-Faz o code review de um arquivo que o usuário informar o nome.
+## Funcionalidades
 
-## Requirements
+- Solicita uma revisão de código com base em princípios de programação SOLID e clean code.
+- Gera um arquivo Markdown com o feedback da revisão do código.
+- Exibe uma visualização em tempo real do arquivo Markdown gerado.
 
-Sem requisitos
+## Como usar
 
-## Extension Settings
+### Opção 1: Comando
 
-* `code-review.start`: Inicia o review.
+1. Selecione o código que deseja revisar no editor do Visual Studio Code.
+2. Abra o Command Palette (Ctrl/Cmd + Shift + P) e pesquise por "Start review code".
+3. Selecione a opção "Start review code" para iniciar o processo de revisão.
+4. Aguarde a resposta do serviço de revisão de código.
+5. Após a conclusão, um arquivo Markdown com o feedback da revisão será aberto em uma visualização separada.
+6. Você pode salvar o arquivo Markdown e compartilhá-lo conforme necessário.
+
+### Opção 2: Menu de contexto
+
+1. Selecione o código que deseja revisar no editor do Visual Studio Code.
+2. Clique com o botão direito do mouse no código selecionado.
+3. No menu de contexto exibido, clique na opção "Review code" para iniciar o processo de revisão.
+4. Aguarde a resposta do serviço de revisão de código.
+5. Após a conclusão, um arquivo Markdown com o feedback da revisão será aberto em uma visualização separada.
+6. Você pode salvar o arquivo Markdown e compartilhá-lo conforme necessário.
+
+[Exemplo de utilização](https://raw.githubusercontent.com/GanekoGuilherme/codereviewer/feat/window-progress/exemplo-utilizacao.jpg)
+
+## Configurações
+
+- `settings.apiKey`: A chave de API gerada no chat GPT da OpenAI. [Obtenha uma chave aqui](https://platform.openai.com/account/api-keys).
+
+## Como contribuir
+
+- Faça o fork deste repositório.
+- Crie uma branch com a sua feature: `git checkout -b feat/minha-feature`.
+- Faça commit das suas alterações: `git commit -m 'feat: Adiciona minha feature'`.
+- Faça push para a branch: `git push origin feat/minha-feature`.
+- Abra um pull request.
+
+## Licença
+
+MIT License
 
 ## Release Notes
 
-### 1.0.0
+### 1.0.0 - 15/07/2023
 
-Initial release of extension code reviewer
+A versão 1.0.0 do CodeReviewer traz os recursos iniciais e funcionalidades básicas para revisão de código utilizando o modelo de linguagem GPT-3.5 Turbo da OpenAI.
 
+### Novidades
+- Solicita revisões de código com base nos princípios de programação SOLID e clean code.
+- Gera arquivos Markdown com feedbacks detalhados das revisões.
+- Permite visualizar os arquivos Markdown gerados em uma visualização separada.
+- Suporte para acesso via comando ou menu de contexto.

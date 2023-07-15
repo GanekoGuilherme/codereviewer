@@ -20,8 +20,18 @@ export class CodeReviewer {
             return;
         }
 
-        const response = await this.getChatCompletion(`Responda com markdown o review do seguinte código: \n${this._code}`);
+        const progressOptions: vscode.ProgressOptions = {
+            location: vscode.ProgressLocation.Notification,
+            title: "Aguardando resposta...",
+            cancellable: false
+        };
+
+        let response = await vscode.window.withProgress(progressOptions, async (_progress) => {
+            return this.getChatCompletion(`Responda com um markdown o review do seguinte código: \n${this._code}`);
+        });;
+
         await this.makeMarkdown(response);
+
     }
 
     private async getChatCompletion(content: string): Promise<string> {
@@ -36,6 +46,10 @@ export class CodeReviewer {
             const response = await axios.post(API_BASE_URL, {
                 model: "gpt-3.5-turbo",
                 messages: [
+                    {
+                        role: 'system',
+                        content: 'You are a senior programmer, who reviews code based on SOLID and clean code. Their reviews have the following topics, "Resumo e breve explicação", "Erros ou falhas", "Sugestões de melhorias" and "Padrões de projeto aplicados". At the end, a note from 0 to 5 is provided in the form of stars (⭐). Always answer in PT-BR.'
+                    },
                     {
                         role: "user",
                         content
@@ -68,7 +82,11 @@ export class CodeReviewer {
             await fs.promises.mkdir(tempDirectory, { recursive: true });
             await fs.promises.writeFile(tempFilePath, response);
             const uri = vscode.Uri.file(tempFilePath);
-            await vscode.window.showTextDocument(uri);
+
+            const document = await vscode.workspace.openTextDocument(uri);
+            await vscode.window.showTextDocument(document);
+            await vscode.commands.executeCommand("workbench.action.files.revert", uri);
+            await vscode.commands.executeCommand("markdown.showPreviewToSide");
         } catch (err) {
             vscode.window.showWarningMessage('Ocorreu um erro ao criar ou gravar o arquivo temporário.');
             console.error('Erro ao criar ou gravar o arquivo temporário:', err);
