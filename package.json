@@ -2,7 +2,7 @@
   "name": "code-reviewer",
   "displayName": "Code Reviewer",
   "description": "",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "guilhermeganeko",
   "icon": "logo.png",
   "engines": {
@@ -13,7 +13,7 @@
     "url": "https://github.com/GanekoGuilherme/codereviewer"
   },
   "categories": [
-    "GPT",  "code", "reviewer"
+    "Other"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
