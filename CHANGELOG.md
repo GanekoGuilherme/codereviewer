@@ -1,5 +1,9 @@
 ## Release Notes
 
+### 1.0.2 - 15/07/2023
+
+A versão 1.0.2 do Code Reviewer remove categorias inexistente
+
 ### 1.0.1 - 15/07/2023
 
 A versão 1.0.1 do Code Reviewer tras mudança no nome do projeto (codereviwer -> code-reviewer e CodeReviewer -> Code Reviewer), adição de categorias e atualizações no 'CHANGELOG' e 'README'
